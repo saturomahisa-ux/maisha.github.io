@@ -3,56 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lost & Found Portal</title>
+  <title>Snake Game</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- 🌟 Header -->
-  <header>
-    <h1>Lost & Found Portal</h1>
-    <p>Track, report, and find your items easily ✨</p>
-    <button id="themeToggle">🌙</button>
-  </header>
+  <h1 class="title">This JS Project will fix your logic problem | JS Game.</h1>
 
-  <!-- 🔍 Search -->
-  <section id="search-section">
-    <input type="text" id="searchBox" placeholder="Search items by name, status, or description..." />
-  </section>
-
-  <!-- 🧾 Items -->
-  <section id="items-section">
-    <div id="itemsContainer" class="cards-container"></div>
-  </section>
-
-  <!-- ➕ Floating Add Button -->
-  <button id="addItemBtn" class="floating-btn">+</button>
-
-  <!-- 🪄 Add Item Modal -->
-  <div id="addModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>Add New Item</h2>
-      <form id="itemForm">
-        <input type="text" id="itemName" name="itemName" placeholder="Item Name" required />
-        <textarea id="itemDescription" name="itemDescription" placeholder="Description" required></textarea>
-        <select id="itemStatus" name="itemStatus" required>
-          <option value="">Select Status</option>
-          <option value="Lost">Lost</option>
-          <option value="Found">Found</option>
-        </select>
-
-        <label for="itemImage" class="upload-label">Upload Photo</label>
-        <input type="file" id="itemImage" accept="image/*" />
-        <img id="imagePreview" alt="Preview" style="display:none; margin-top:10px; width:100%; border-radius:10px;">
-
-        <button type="submit">Add Item</button>
-      </form>
-    </div>
+  <div class="game-info">
+    <div class="box">High Score : <span id="highScore">0</span></div>
+    <div class="box">Score : <span id="score">0</span></div>
+    <div class="box">time : <span id="timer">00:00</span></div>
   </div>
 
-  <footer>
-    <p>Made with ❤️ by Maisha</p>
-  </footer>
+  <div class="game-board">
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+  </div>
 
   <script src="script.js"></script>
 </body>
