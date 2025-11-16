@@ -12,15 +12,29 @@ let minutes = 0;
 
 document.getElementById("highScore").innerText = highScore;
 
-document.addEventListener("keydown", dirControl);
-
-function dirControl(e) {
+// KEYBOARD CONTROL
+document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
   else if (e.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
   else if (e.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
   else if (e.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
-}
+});
 
+// MOBILE TOUCH CONTROL
+document.querySelector(".up").addEventListener("click", () => {
+  if (direction !== "DOWN") direction = "UP";
+});
+document.querySelector(".down").addEventListener("click", () => {
+  if (direction !== "UP") direction = "DOWN";
+});
+document.querySelector(".left").addEventListener("click", () => {
+  if (direction !== "RIGHT") direction = "LEFT";
+});
+document.querySelector(".right").addEventListener("click", () => {
+  if (direction !== "LEFT") direction = "RIGHT";
+});
+
+// FOOD SPAWN
 function spawnFood() {
   return {
     x: Math.floor(Math.random() * (canvas.width / box)) * box,
@@ -28,6 +42,7 @@ function spawnFood() {
   };
 }
 
+// DRAW GRID
 function drawGrid() {
   for (let x = 0; x < canvas.width; x += box) {
     for (let y = 0; y < canvas.height; y += box) {
@@ -41,17 +56,17 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawGrid();
 
-  // Draw snake
+  // SNAKE
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = "#fff";
     ctx.fillRect(snake[i].x, snake[i].y, box - 1, box - 1);
   }
 
-  // Draw food
+  // FOOD
   ctx.fillStyle = "red";
   ctx.fillRect(food.x, food.y, box - 1, box - 1);
 
-  // Move snake
+  // MOVE
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
@@ -60,7 +75,7 @@ function draw() {
   if (direction === "RIGHT") snakeX += box;
   if (direction === "DOWN") snakeY += box;
 
-  // Check if food eaten
+  // EAT FOOD
   if (snakeX === food.x && snakeY === food.y) {
     score++;
     document.getElementById("score").innerText = score;
@@ -69,9 +84,9 @@ function draw() {
     snake.pop();
   }
 
-  const newHead = { x: snakeX, y: snakeY };
+  let newHead = { x: snakeX, y: snakeY };
 
-  // Game Over conditions
+  // GAME OVER
   if (
     snakeX < 0 ||
     snakeY < 0 ||
@@ -97,17 +112,15 @@ function collision(head, array) {
   return false;
 }
 
-// Timer
+// TIMER
 function updateTimer() {
   seconds++;
   if (seconds === 60) {
     minutes++;
     seconds = 0;
   }
-  const timeString = `${minutes.toString().padStart(2, "0")}:${seconds
-    .toString()
-    .padStart(2, "0")}`;
-  document.getElementById("timer").innerText = timeString;
+  document.getElementById("timer").innerText =
+    `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
 let game = setInterval(draw, 120);
