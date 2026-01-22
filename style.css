@@ -1,90 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #0f0f0f;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
+    background-color: #fff;
+    color: #000;
 }
 
-.title {
-  margin-top: 10px;
-  font-size: 18px;
+/* Titles */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 50px 0;
+    text-transform: uppercase; /* Match the "CUSTOMER TRUE STORIES" style */
 }
 
-.game-info {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 20px;
+/* Testimonials Section */
+.testimonials-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.box {
-  border: 2px solid #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  background-color: #111;
-}
-
-.game-board {
-  margin-top: 20px;
-  border: 2px solid #fff;
-}
-
-/* Grid background */
-canvas {
-  background: repeating-linear-gradient(
-      0deg,
-      #111 0px,
-      #111 19px,
-      #222 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      #111 0px,
-      #111 19px,
-      #222 20px
-    );
-}
-
-/* MOBILE CONTROLS */
-.mobile-controls {
-  margin-top: 25px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn {
-  background: #222;
-  color: white;
-  border: 2px solid #555;
-  padding: 15px 25px;
-  font-size: 22px;
-  border-radius: 10px;
-  width: 80px;
-}
-
-.middle-row {
-  display: flex;
-  gap: 20px;
-}
-
-/* Show mobile buttons only on small screens */
-@media (max-width: 768px) {
-  .mobile-controls {
+.testimonial-container {
     display: flex;
-  }
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.stars {
+    color: #FFB800;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    min-height: 60px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.verified-icon {
+    background: #4CAF50;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* FAQ Section */
+.faq-section {
+    background-color: #D1F3FF; /* Exact light blue from screenshot */
+    padding: 80px 20px;
+}
+
+.faq-section .section-title {
+    text-transform: none; /* FAQ title is not all caps in image */
+    margin-bottom: 40px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 22px 30px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #fcfcfc;
+}
+
+/* Chevron arrow */
+.chevron::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+
+.faq-item.active .chevron::after {
+    transform: rotate(-135deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 30px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust based on content */
+    padding-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
