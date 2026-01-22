@@ -1,103 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KetaMIND - Layout</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>KetaMIND – Stories & FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="testimonials-section">
-        <h2 class="section-title">CUSTOMER'S TRUE STORIES</h2>
-        
-        <div class="testimonial-container">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"Arrived quickly, great quality!"</p>
-                <div class="user-info">
-                    <img src="https://via.placeholder.com/50" alt="Annika" class="avatar">
-                    <div class="user-details">
-                        <div class="name-row">
-                            <strong>Annika Parrott</strong>
-                            <span class="verified-icon">✓</span>
-                        </div>
-                        <p class="meta">Verified Purchase • Portland, OR</p>
-                    </div>
-                </div>
-            </div>
+<!-- CUSTOMER STORIES -->
+<section class="stories-section">
+  <h2 class="section-heading">CUSTOMER’S TRUE STORIES</h2>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"The perfect balance of relaxation and clarity. Exactly what I needed."</p>
-                <div class="user-info">
-                    <img src="https://via.placeholder.com/50" alt="Jordan" class="avatar">
-                    <div class="user-details">
-                        <div class="name-row">
-                            <strong>Jordan Martinez</strong>
-                            <span class="verified-icon">✓</span>
-                        </div>
-                        <p class="meta">Verified Purchase • Austin, TX</p>
-                    </div>
-                </div>
-            </div>
+  <div class="stories-row">
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"Lab reports included, fast shipping, discreet packaging. 10/10 would recommend."</p>
-                <div class="user-info">
-                    <img src="https://via.placeholder.com/50" alt="Taylor" class="avatar">
-                    <div class="user-details">
-                        <div class="name-row">
-                            <strong>Taylor Chen</strong>
-                            <span class="verified-icon">✓</span>
-                        </div>
-                        <p class="meta">Verified Purchase • Seattle, WA</p>
-                    </div>
-                </div>
-            </div>
+    <div class="story-box">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Arrived quickly, great quality!"</p>
+
+      <div class="user">
+        <img src="https://i.pravatar.cc/100?img=12">
+        <div>
+          <div class="name">
+            Annika Parrott <span class="dot"></span>
+          </div>
+          <div class="meta">Verified Purchase • Portland, OR</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section class="faq-section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question">What is ketaMIND? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">How do I take ketaMIND? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Is ketaMIND safe? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">How long does shipping take? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">What's your return policy? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Can I subscribe? <span class="chevron"></span></button>
-                <div class="faq-answer"><p> </p></div>
-            </div>
+    <div class="story-box">
+      <div class="stars">★★★★★</div>
+      <p class="quote">
+        "The perfect balance of relaxation and clarity. Exactly what I needed."
+      </p>
+
+      <div class="user">
+        <img src="https://i.pravatar.cc/100?img=32">
+        <div>
+          <div class="name">
+            Jordan Martinez <span class="dot"></span>
+          </div>
+          <div class="meta">Verified Purchase • Austin, TX</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <script>
-        // FAQ Accordion Logic
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-    </script>
+    <div class="story-box">
+      <div class="stars">★★★★★</div>
+      <p class="quote">
+        "Lab reports included, fast shipping, discreet packaging. 10/10 would recommend."
+      </p>
+
+      <div class="user">
+        <img src="https://i.pravatar.cc/100?img=47">
+        <div>
+          <div class="name">
+            Taylor Chen <span class="dot"></span>
+          </div>
+          <div class="meta">Verified Purchase • Seattle, WA</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="section-heading">Frequently Asked Questions</h2>
+
+  <div class="faq-wrap">
+
+    <div class="faq-item">
+      <button class="faq-q">What is ketaMIND?<span>⌄</span></button>
+      <div class="faq-a"><p> </p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How do I take ketaMIND?<span>⌄</span></button>
+      <div class="faq-a"><p> </p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Is ketaMIND safe?<span>⌄</span></button>
+      <div class="faq-a"><p> </p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How long does shipping take?<span>⌄</span></button>
+      <div class="faq-a"><p></p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">What’s your return policy?<span>⌄</span></button>
+      <div class="faq-a"><p> </p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Can I subscribe?<span>⌄</span></button>
+      <div class="faq-a"><p> </p></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.onclick=()=>{
+    const a=q.nextElementSibling;
+    document.querySelectorAll('.faq-a').forEach(x=>x!==a&&(x.style.maxHeight=null));
+    a.style.maxHeight? a.style.maxHeight=null : a.style.maxHeight=a.scrollHeight+"px";
+  }
+});
+</script>
+
 </body>
 </html>
